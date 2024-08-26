@@ -1,8 +1,3 @@
-'''Given a DataFrame containing sales data with columns: 'Product', 'Region', 'Sales', and 'Date', 
-write a Python function that: 
-• Groups the data by 'Product' and calculates the total sales for each product. 
-• Groups the data by 'Region' and 'Product', then calculates the mean sales for each 
-combination.'''
 import pandas as pd
 def analyse_dat(df):
     product_dta = df.groupby('Product')['Sales'].sum()
@@ -10,9 +5,6 @@ def analyse_dat(df):
 
     Region_sale = df.groupby(['Product', 'Region'])['Sales'].mean()
     print(Region_sale)
-
-
-
 data = {
     'Product': ['A', 'A', 'B', 'B', 'C', 'C'],
     'Region': ['North', 'South', 'North', 'South', 'North', 'South'],
